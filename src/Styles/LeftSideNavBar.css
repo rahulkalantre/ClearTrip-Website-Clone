@@ -1,0 +1,39 @@
+.left-aside {
+  margin-left: 140px;
+  width: 12rem;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left-aside-bar {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  padding: 5px;
+  padding-right: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.left-aside-bar span {
+  color: black;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.left-aside-bar:hover {
+  background: lightblue;
+  border-radius: 5px;
+}
+
+.left-aside-bar span:hover {
+  color: blue;
+}
+
+.nav-bar-menu {
+  margin-left: 12px !important;
+  font-weight: none;
+}
