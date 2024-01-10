@@ -1,10 +1,10 @@
 import React from "react";
 import '../Styles/LeftSideNavBar.css';
-import NavFlightLogo from "../Assets/SvgLogo/NavFlightLogo";
-import NavHotelLogo from "../Assets/SvgLogo/NavHotelLogo";
-import NavBusLogo from "../Assets/SvgLogo/NavBusLogo";
-import NavMyTripsLogo from "../Assets/SvgLogo/NavMyTripsLogo";
-import NavSupportLogo from "../Assets/SvgLogo/NavSupportLogo";
+import NavFlightLogo from "../Assets/LeftSideNavBarLogo/NavFlightLogo";
+import NavHotelLogo from "../Assets/LeftSideNavBarLogo/NavHotelLogo";
+import NavBusLogo from "../Assets/LeftSideNavBarLogo/NavBusLogo";
+import NavMyTripsLogo from "../Assets/LeftSideNavBarLogo/NavMyTripsLogo";
+import NavSupportLogo from "../Assets/LeftSideNavBarLogo/NavSupportLogo";
 
 const LeftSideNavBar = () => {
   return (
