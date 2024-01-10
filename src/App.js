@@ -1,12 +1,10 @@
 import './App.css';
-import LeftSideNavBar from './Components/LeftSideNavBar';
-import NavigationBar from './Components/NavigationBar';
+import FlightsPage from './Pages/FlightsPage';
 
 function App() {
   return (
     <div className="App">
-      <NavigationBar />
-      <LeftSideNavBar />
+      <FlightsPage />
     </div>
   );
 }

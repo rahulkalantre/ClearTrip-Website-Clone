@@ -1,10 +1,19 @@
 import React from "react";
-import "../Styles/FlightsPage.css";
 import NavigationBar from "../Components/NavigationBar";
 import LeftSideNavBar from "../Components/LeftSideNavBar";
 import MiddleSection from "../Components/MiddleSection";
+import Offer1 from "../Assets/Images/Offer1.webp";
+import Offer2 from "../Assets/Images/Offer2.webp";
+import Offer3 from "../Assets/Images/Offer3.webp";
+import DataImage from "../Assets/Images/DataImage.webp";
+import Goa from "../Assets/Images/Goa.jpg";
+import Delhi from "../Assets/Images/Delhi.jpg";
+import Banglore from "../Assets/Images/Bangalore.webp";
+import Varanasi from "../Assets/Images/Varanasi.jpg";
+import AbuDhabi from "../Assets/Images/AbuDhabi.jpg";
 import RightSideCarouselSection from "../Components/RightSideCarouselSection";
 import Footer from "../Components/Footer";
+import "../Styles/FlightsPage.css";
 
 const FlightsPage = () => {
   return (
@@ -15,7 +24,23 @@ const FlightsPage = () => {
         <MiddleSection />
         <RightSideCarouselSection />
       </div>
-      <div>
+      <div className="flightpage-offerimg">
+        <img src={Offer1} />
+        <img src={Offer2} />
+        <img src={Offer3} />
+      </div>
+      <div className="flightpage-adfor-download">
+        <img src={DataImage} />
+      </div>
+      <h2 className="popular-destination">Popular Destination</h2>
+      <div className="flightpage-popular-destination">
+        <img src={Goa} />
+        <img src={Delhi} />
+        <img src={Banglore} />
+        <img src={Varanasi} />
+        <img src={AbuDhabi} />
+      </div>
+      <div className="flightpage-homepage-details"></div>
         <div>
           <h5 className="details-title-h5">
             Booking flights & hotels online with Cleartrip
@@ -121,7 +146,6 @@ const FlightsPage = () => {
           </p>
         </div>
         <br></br>
-      </div>
       <Footer />
     </div>
   );
