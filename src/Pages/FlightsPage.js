@@ -25,20 +25,20 @@ const FlightsPage = () => {
         <RightSideCarouselSection />
       </div>
       <div className="flightpage-offerimg">
-        <img src={Offer1} />
-        <img src={Offer2} />
-        <img src={Offer3} />
+        <img alt="Offer1" src={Offer1} />
+        <img alt="Offer2" src={Offer2} />
+        <img alt="Offer3" src={Offer3} />
       </div>
       <div className="flightpage-adfor-download">
         <img src={DataImage} />
       </div>
       <h2 className="popular-destination">Popular Destination</h2>
       <div className="flightpage-popular-destination">
-        <img src={Goa} />
-        <img src={Delhi} />
-        <img src={Banglore} />
-        <img src={Varanasi} />
-        <img src={AbuDhabi} />
+        <img alt="Goa" src={Goa} />
+        <img alt="Delhi" src={Delhi} />
+        <img alt="Banglore" src={Banglore} />
+        <img alt="Varanasi" src={Varanasi} />
+        <img alt="AbuDhabi" src={AbuDhabi} />
       </div>
       <div className="flightpage-homepage-details"></div>
         <div>

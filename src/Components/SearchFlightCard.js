@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setValues } from "../Store/Slice";
+import axios from "axios";
 import DeparturePlane from "../Assets/Flight/DeparturePlane";
 import Transition from "../Assets/Flight/Transition";
 import CalenderLogo from "../Assets/Flight/CalenderLogo";
-import "../Styles/MiddleSection.css";
-// import { GetApp } from "@mui/icons-material";
-import axios from "axios";
 import FlightCardCalendar from "./FilghtCardCalender";
+import "../Styles/MiddleSection.css";
 
 const SearchFlightCard = () => {
   const [dayDeparture, setDayDeparture] = useState("");
   const [dayArrival, setDayArrival] = useState("");
-
   const [whereFromValue, setWhereToValue] = useState({});
+  const navigate = useNavigate();
+
   const stateFunction = (e) => {
     const { name, value } = e.target;
     let myValue = value.slice(0, 3);
@@ -19,12 +22,18 @@ const SearchFlightCard = () => {
   };
   console.log(whereFromValue);
 
+  const fetchApiData = useSelector((e) => {
+    return e.data;
+  });
+  const myRedux = useDispatch();
+
   const fetchData = async () => {
     const data = await axios(
       `https://academics.newtonschool.co/api/v1/bookingportals/flight/?search={"source":"${whereFromValue.From}","destination":"${whereFromValue.To}"}&day=Mon`,
       { headers: { projectID: "uq9yiuh911bz" } }
     );
-    console.log(data);
+    myRedux(setValues(data));
+    navigate("/searchflight");
   };
 
   return (
@@ -34,15 +43,15 @@ const SearchFlightCard = () => {
           <form className="search-from">
             {/* <span>{icon}</span> */}
             <select className="flightsearch-section">
-              <option>One way</option>
-              <option>Round trip</option>
+              <option>One Way</option>
+              <option>Round Trip</option>
             </select>
           </form>
           <div className="flightsearch-button">
-            <button>Regular fare</button>
-            <button>Student fare</button>
-            <button>Senior citizen fare</button>
-            <button>Armed forces fare</button>
+            <button>Regular Fare</button>
+            <button>Student Fare</button>
+            <button>Senior Citizen Fare</button>
+            <button>Armed Forces Fare</button>
           </div>
           <div className="flightsearch-search">
             <div className="departure-inputcard">
@@ -92,7 +101,6 @@ const SearchFlightCard = () => {
                   <CalenderLogo />
                 </div>
                 <div>
-                  {/* Flight Calaender */}
                   <FlightCardCalendar
                     StartDay={(dayOfstart) => {
                       setDayDeparture(dayOfstart);
@@ -105,7 +113,7 @@ const SearchFlightCard = () => {
               </div>
             </div>
             <button className="search-btn" onClick={fetchData}>
-              Search flights
+              Search Flights
             </button>
           </div>
         </div>

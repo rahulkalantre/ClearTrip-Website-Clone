@@ -1,10 +1,10 @@
 import './App.css';
-import FlightsPage from './Pages/FlightsPage';
+import Body from './Pages/Body';
 
 function App() {
   return (
     <div className="App">
-      <FlightsPage />
+      <Body />
     </div>
   );
 }
