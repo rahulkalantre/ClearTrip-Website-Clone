@@ -30,7 +30,7 @@ const MainOffersCarousel = () => {
             href="https://www.cleartrip.com/offers/india/indigo-air-dom-offer"
             target="_blank"
           >
-            <span className="card-knowmore"> Know more</span>
+            <span className="card-knowmore">Know more</span>
           </a>
         </div>
         <div className="rightaside-secondcarousel-card">

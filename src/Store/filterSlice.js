@@ -7,7 +7,7 @@ export const flightFilterData = createSlice({
   },
   reducers: {
     setValues: (state, action) => {
-        state.flightData = [];
+      state.flightData = [];
       state.flightData = action.payload;
     },
   },

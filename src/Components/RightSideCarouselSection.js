@@ -9,7 +9,7 @@ const RightSideCarouselSection = () => {
       <div className="rightaside-sesction">
         <MainTopCarousel />
         <div className="rightaside-sesction-offers">
-          <h3>More Offers</h3>
+          <h4>More Offers</h4>
           <a>View All</a>
         </div>
         <MainOfferCarousel />

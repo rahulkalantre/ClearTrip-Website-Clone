@@ -24,13 +24,12 @@ const SearchFlightNavBar = () => {
           <div>
             <AvatarLogo />
           </div>
-          <div>Log in</div>
+          <div>Log In</div>
         </div>
       </div>
       <div className="flights-search-boxs">
         <div className="flights-search-box">Round trip</div>
         <div className="flights-search-box">
-          {/* <input type="text" /> */}
           BLR - Bangalore, IN
         </div>
         <div className="flights-search-box">BOM - Mumbai, IN</div>

@@ -10,17 +10,17 @@ import { setValues } from "../Store/Slice";
 
 const SearchFlightsFilters = () => {
   const dispatch = useDispatch();
-  const fetchApiData = useSelector((e) => {
-    return e.data;
-  });
-  // console.log(fetchApiData);
   const [storeFetchedData, setStoreFetchedData] = useState([]);
   const [filters, setFilters] = useState({
     stop0: false,
     stop1: false,
     stop2: false,
   });
-  // const data = fetchApiData.flightData.data.data.flights;
+
+  const fetchApiData = useSelector((e) => {
+    return e.data;
+  });
+
   useEffect(() => {
     filterFlights();
   }, [filters]);
@@ -29,34 +29,30 @@ const SearchFlightsFilters = () => {
     setStoreFetchedData(fetchApiData.flightData.data.data.flights);
     dispatch(setValues(fetchApiData.flightData.data.data.flights));
   }, []);
-  // console.log(storeFetchedData);
 
   const filterFlights = () => {
-    // Filter the flights based on the selected checkboxes
-    // console.log(filters);
-    const filteredFlights = storeFetchedData.filter(flight => {
+    const filteredFlights = storeFetchedData.filter((flight) => {
       if (filters.stop0 && flight.stops === 0) return flight;
       if (filters.stop1 && flight.stops === 1) return flight;
       if (filters.stop2 && flight.stops === 2) return flight;
-      if (filters.stop0 == false && filters.stop1 == false && filters.stop2 == false) {
+      if (
+        filters.stop0 == false &&
+        filters.stop1 == false &&
+        filters.stop2 == false
+      ) {
         return flight;
       }
       return null;
     });
-    // Update the state with the filtered flights
-    // You can use this filtered Flights array to render your UI
-    // console.log(filteredFlights);
     dispatch(setValues(filteredFlights));
-  }
+  };
 
   const handleCheckboxChange = (checkboxName) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       [checkboxName]: !prevFilters[checkboxName],
     }));
-    // filterFlights();
   };
-  // console.log(filters);
 
   return (
     <>
@@ -65,13 +61,10 @@ const SearchFlightsFilters = () => {
           <p>
             <b>Flights Filter</b>
           </p>
-          <button className="filter-btn">
-            Apply
-          </button>
+          <button className="filter-btn">Apply</button>
         </div>
 
-        {/* 1st stops */}
-
+        {/* 1st Filter - Stops */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -85,7 +78,7 @@ const SearchFlightsFilters = () => {
               <form>
                 <div className="checkbox-container">
                   <input
-                    onChange={() => handleCheckboxChange('stop0')}
+                    onChange={() => handleCheckboxChange("stop0")}
                     type="checkbox"
                     id="non-stop"
                     name="non-stop"
@@ -93,12 +86,12 @@ const SearchFlightsFilters = () => {
                     value="0"
                   />
                   <label htmlFor="non-stop" className="checkbox-label">
-                    0-stop
+                    Non-Stop
                   </label>
                 </div>
                 <div className="checkbox-container">
                   <input
-                    onChange={() => handleCheckboxChange('stop1')}
+                    onChange={() => handleCheckboxChange("stop1")}
                     type="checkbox"
                     className="checkbox-input"
                     id="stop-one"
@@ -106,12 +99,12 @@ const SearchFlightsFilters = () => {
                     value="1"
                   />
                   <label htmlFor="stop-one" className="checkbox-label">
-                    1-stop
+                    1 Stop
                   </label>
                 </div>
                 <div className="checkbox-container">
                   <input
-                    onChange={() => handleCheckboxChange('stop2')}
+                    onChange={() => handleCheckboxChange("stop2")}
                     type="checkbox"
                     className="checkbox-input"
                     id="stop-two"
@@ -119,7 +112,7 @@ const SearchFlightsFilters = () => {
                     value="2"
                   />
                   <label htmlFor="stop-two" className="checkbox-label">
-                    2-stop
+                    2 Stops
                   </label>
                 </div>
               </form>
@@ -127,8 +120,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        {/* 2nd */}
-
+        {/* 2nd Filter - Departure Time */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -136,12 +128,22 @@ const SearchFlightsFilters = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="filters-title">
-                Departure time from BLR
-              </Typography>
+              <Typography className="filters-title">Departure Time</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <form>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id="departuretime-morning"
+                    name="early-morning"
+                    value="MidNight-06:00"
+                    className="checkbox-input"
+                  />
+                  <label htmlFor="morning" className="checkbox-label">
+                    MidNight - 08:00
+                  </label>
+                </div>
                 <div className="checkbox-container">
                   <input
                     type="checkbox"
@@ -151,7 +153,7 @@ const SearchFlightsFilters = () => {
                     className="checkbox-input"
                   />
                   <label htmlFor="morning" className="checkbox-label">
-                    Morning 06:00-12:00
+                    Morning 06:00 - 12:00
                   </label>
                 </div>
                 <div className="checkbox-container">
@@ -163,7 +165,7 @@ const SearchFlightsFilters = () => {
                     className="checkbox-input"
                   />
                   <label htmlFor="afternoon" className="checkbox-label">
-                    Afternoon 12:00-16:00
+                    Afternoon 12:00 - 16:00
                   </label>
                 </div>
                 <div className="checkbox-container">
@@ -175,7 +177,7 @@ const SearchFlightsFilters = () => {
                     className="checkbox-input"
                   />
                   <label htmlFor="evening" className="checkbox-label">
-                    Evening 16:00-20:00
+                    Evening 16:00 - 20:00
                   </label>
                 </div>
                 <div className="checkbox-container">
@@ -187,7 +189,7 @@ const SearchFlightsFilters = () => {
                     value="20:00-06:00"
                   />
                   <label htmlFor="night" className="checkbox-label">
-                    Night 20:00-06:00
+                    Night 20:00 - 06:00
                   </label>
                 </div>
               </form>
@@ -195,8 +197,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        {/* 3 */}
-
+        {/* 3rd Filter - Arrival Time */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -204,9 +205,7 @@ const SearchFlightsFilters = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="filters-title">
-                Arrival time To BOM
-              </Typography>
+              <Typography className="filters-title">Arrival Time</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <form>
@@ -221,7 +220,7 @@ const SearchFlightsFilters = () => {
                   <label htmlFor="earlymorning" className="checkbox-label">
                     <div className="checkbox-label-gap">
                       <span>Early Morning</span>
-                      <span style={{ marginLeft: "15px" }}>24:00-8:00</span>
+                      <span style={{ marginLeft: "15px" }}>24:00-08:00</span>
                     </div>
                   </label>
                 </div>
@@ -290,8 +289,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        {/* 4th */}
-
+        {/* 4th Filter - One-Way Price */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -299,12 +297,12 @@ const SearchFlightsFilters = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="filters-title">One-way price</Typography>
+              <Typography className="filters-title">One-Way Price</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <form>
                 <label htmlFor="vol" className="range-title">
-                  Up to 
+                  Up To
                 </label>
                 <br></br>
                 <input
@@ -316,9 +314,8 @@ const SearchFlightsFilters = () => {
                   step="1"
                   className="range-input"
                 />
-
                 <div className="checkbox-label">
-                  <span>₹ 3000</span>
+                  <span>₹3000</span>
                   <span style={{ marginLeft: "115px" }}>₹6,834</span>
                 </div>
               </form>
@@ -326,42 +323,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        <div>
-          <Accordion defaultExpanded={true}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography className="filters-title">One-way price</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <form>
-                <label htmlFor="vol" className="range-title">
-                  Up to
-                </label>
-                <br></br>
-                <input
-                  type="range"
-                  id="vol"
-                  name="vol"
-                  min="2000"
-                  max="6000"
-                  step="1"
-                  className="range-input"
-                />
-
-                <div className="checkbox-label">
-                  <span> ₹2000</span>
-                  <span style={{ marginLeft: "115px" }}>₹6000</span>
-                </div>
-              </form>
-            </AccordionDetails>
-          </Accordion>
-        </div>
-
-        {/* 5th */}
-
+        {/* 5th Filter - Airlines */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -476,8 +438,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        {/* 6th */}
-
+        {/* 6th Filter - Trip Duration */}
         <div>
           <Accordion defaultExpanded={true}>
             <AccordionSummary
@@ -485,7 +446,7 @@ const SearchFlightsFilters = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography className="filters-title">Trip duration</Typography>
+              <Typography className="filters-title">Trip Duration</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <form>
@@ -542,8 +503,7 @@ const SearchFlightsFilters = () => {
           </Accordion>
         </div>
 
-        {/* 7th */}
-        
+        {/* 7th Filter - Layover Duration */}
         <div>
           <Accordion>
             <AccordionSummary
@@ -552,7 +512,7 @@ const SearchFlightsFilters = () => {
               id="panel1a-header"
             >
               <Typography className="filters-title">
-                Layover duration
+                Layover Duration
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
@@ -567,6 +527,42 @@ const SearchFlightsFilters = () => {
                   />
                   <label htmlFor="layover-duration" className="checkbox-label">
                     1 Hr
+                  </label>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id="layover-duration"
+                    name="layover-duration"
+                    value="2"
+                    className="checkbox-input"
+                  />
+                  <label htmlFor="layover-duration" className="checkbox-label">
+                    2 Hrs
+                  </label>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id="layover-duration"
+                    name="layover-duration"
+                    value="3"
+                    className="checkbox-input"
+                  />
+                  <label htmlFor="layover-duration" className="checkbox-label">
+                    3 Hrs
+                  </label>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id="layover-duration"
+                    name="layover-duration"
+                    value="4"
+                    className="checkbox-input"
+                  />
+                  <label htmlFor="layover-duration" className="checkbox-label">
+                    4 Hrs
                   </label>
                 </div>
               </form>

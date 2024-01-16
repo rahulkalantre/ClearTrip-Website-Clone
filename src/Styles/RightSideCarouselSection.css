@@ -4,12 +4,14 @@
   align-items: center;
   height: 45rem;
   width: 20rem;
+  margin-right: 130px;
 }
 
 .rightaside-sesction-offers {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  margin-right: 130px;
 }
 
 .rightaside-sesction-offers a {

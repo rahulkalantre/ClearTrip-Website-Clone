@@ -10,22 +10,21 @@ import FlightCardCalendar from "./FilghtCardCalender";
 import "../Styles/MiddleSection.css";
 
 const SearchFlightCard = () => {
+  const myRedux = useDispatch();
+  const navigate = useNavigate();
   const [dayDeparture, setDayDeparture] = useState("");
   const [dayArrival, setDayArrival] = useState("");
   const [whereFromValue, setWhereToValue] = useState({});
-  const navigate = useNavigate();
 
   const stateFunction = (e) => {
     const { name, value } = e.target;
     let myValue = value.slice(0, 3);
     setWhereToValue({ ...whereFromValue, [name]: myValue });
   };
-  console.log(whereFromValue);
 
   const fetchApiData = useSelector((e) => {
     return e.data;
   });
-  const myRedux = useDispatch();
 
   const fetchData = async () => {
     const data = await axios(

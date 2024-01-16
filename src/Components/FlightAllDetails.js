@@ -12,18 +12,15 @@ const FlightAllDetails = () => {
   const fetchApiData = useSelector((e) => {
     return e.filterData;
   });
-  // console.log(fetchApiData);
-  setData(fetchApiData.flightData.data.data.flights);
-  // const [receivedData, setReceivedData] = useState({});
-  // console.log("Fetch API:", data);
+
   useEffect(() => {
     gatherData();
-  }, []);
+  }, [fetchApiData]);
 
   const gatherData = () => {
-    const getData = fetchApiData.flightData.data.data.flights;
+    const getData = fetchApiData.flightData;
     setData(getData);
-  }
+  };
   // console.log("Without UesEffect:", receivedData);
 
   const selectFlightCard = (e, index) => {
