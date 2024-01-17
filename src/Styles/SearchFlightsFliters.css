@@ -1,6 +1,6 @@
 .searchflightpage-leftsection {
-  margin-left: 100px;
-  width: 240px;
+  margin-left: 50px;
+  width: 300px;
   height: auto;
 }
 
@@ -58,5 +58,3 @@
   color: #1a1a1a;
 }
 
-.checkbox-label-gap {
-}

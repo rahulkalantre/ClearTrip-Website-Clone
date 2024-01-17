@@ -16,6 +16,13 @@ const SearchFlightsFilters = () => {
     stop1: false,
     stop2: false,
   });
+  const [departureTime, setDepartureTime] = useState({
+    earlyMorning: false,
+    morning: false,
+    afternoon: false,
+    evening: false,
+    night: false,
+  });
 
   const fetchApiData = useSelector((e) => {
     return e.data;
@@ -23,12 +30,20 @@ const SearchFlightsFilters = () => {
 
   useEffect(() => {
     filterFlights();
-  }, [filters]);
+  }, [filters, departureTime]);
 
   useEffect(() => {
     setStoreFetchedData(fetchApiData.flightData.data.data.flights);
     dispatch(setValues(fetchApiData.flightData.data.data.flights));
   }, []);
+
+  const isDepartureTimeInRange = (departureTime) => {
+    const departureDate = new Date(`2000-01-01 ${departureTime}`);
+    const startRange = new Date(`2000-01-01 01:00`);
+    const endRange = new Date(`2000-01-01 06:00`);
+
+    return departureDate.getHours();
+  };
 
   const filterFlights = () => {
     const filteredFlights = storeFetchedData.filter((flight) => {
@@ -44,13 +59,48 @@ const SearchFlightsFilters = () => {
       }
       return null;
     });
-    dispatch(setValues(filteredFlights));
+
+    const flightTimeFilter = filteredFlights.filter((flight) => {
+      const a = isDepartureTimeInRange(flight.departureTime);
+      if (departureTime.earlyMorning && a > 0 && a < 8) {
+        return flight;
+      }
+      if (departureTime.morning && a > 6 && a < 12) {
+        return flight;
+      }
+      if (departureTime.afternoon && a > 12 && a < 16) {
+        return flight;
+      }
+      if (departureTime.evening && a > 16 && a < 20) {
+        return flight;
+      }
+      if (departureTime.night && a > 20 && a < 6) {
+        return flight;
+      }
+      if (
+        !departureTime.earlyMorning &&
+        !departureTime.morning &&
+        !departureTime.afternoon &&
+        !departureTime.evening &&
+        !departureTime.night
+      ) {
+        return flight;
+      }
+    });
+    dispatch(setValues(flightTimeFilter));
   };
 
   const handleCheckboxChange = (checkboxName) => {
     setFilters((prevFilters) => ({
       ...prevFilters,
       [checkboxName]: !prevFilters[checkboxName],
+    }));
+  };
+
+  const departureTimeChange = (timeSlot) => {
+    setDepartureTime((prevFilters) => ({
+      ...prevFilters,
+      [timeSlot]: !prevFilters[timeSlot],
     }));
   };
 
@@ -61,7 +111,6 @@ const SearchFlightsFilters = () => {
           <p>
             <b>Flights Filter</b>
           </p>
-          <button className="filter-btn">Apply</button>
         </div>
 
         {/* 1st Filter - Stops */}
@@ -134,6 +183,7 @@ const SearchFlightsFilters = () => {
               <form>
                 <div className="checkbox-container">
                   <input
+                    onChange={() => departureTimeChange("earlyMorning")}
                     type="checkbox"
                     id="departuretime-morning"
                     name="early-morning"
@@ -146,6 +196,7 @@ const SearchFlightsFilters = () => {
                 </div>
                 <div className="checkbox-container">
                   <input
+                    onChange={() => departureTimeChange("morning")}
                     type="checkbox"
                     id="departuretime-morning"
                     name="morning"
@@ -158,6 +209,7 @@ const SearchFlightsFilters = () => {
                 </div>
                 <div className="checkbox-container">
                   <input
+                    onChange={() => departureTimeChange("afternoon")}
                     type="checkbox"
                     id="departuretime-afternoon"
                     name="afternoon"
@@ -170,6 +222,7 @@ const SearchFlightsFilters = () => {
                 </div>
                 <div className="checkbox-container">
                   <input
+                    onChange={() => departureTimeChange("evening")}
                     type="checkbox"
                     id="departuretime-evening"
                     name="evening"
@@ -182,6 +235,7 @@ const SearchFlightsFilters = () => {
                 </div>
                 <div className="checkbox-container">
                   <input
+                    onChange={() => departureTimeChange("night")}
                     type="checkbox"
                     className="checkbox-input"
                     id="departuretime-night"
