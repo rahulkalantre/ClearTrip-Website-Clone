@@ -6,6 +6,7 @@ import SearchFlightLogo from "../Assets/Images/SearchFlightLogo";
 
 const TotalFlightDetails = () => {
   const [data, setData] = useState([]);
+  const [returnData, setReturnData] = useState([]);
 
   const fetchApiData = useSelector((e) => {
     return e.filterData;
@@ -17,7 +18,9 @@ const TotalFlightDetails = () => {
 
   const gatherData = () => {
     const getData = fetchApiData.flightData;
+    const getReturnData = fetchApiData.returnFlightData;
     setData(getData);
+    setReturnData(getReturnData);
   };
 
   return (
@@ -121,9 +124,6 @@ const TotalFlightDetails = () => {
                     <SearchFlightLogo />
                   </span>
                   <span className="flight-id">{item.flightID}</span>
-                  {/* <div className="full-flights-details">
-                  <a>Flights Details</a>
-                </div> */}
                 </div>
                 <div className="left-div departure-flight-time">
                   <span>{item.departureTime}</span>
@@ -148,7 +148,7 @@ const TotalFlightDetails = () => {
 
         <div className="flightsdata">
           <div className="flight-headings"></div>
-          {data.map((item, index) => (
+          {returnData.map((item, index) => (
             <div className="final-flight-data">
               <div className="left">
                 <div className="left-div logo">

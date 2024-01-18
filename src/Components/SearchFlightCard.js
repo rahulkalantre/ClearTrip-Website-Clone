@@ -22,16 +22,20 @@ const SearchFlightCard = () => {
     setWhereToValue({ ...whereFromValue, [name]: myValue });
   };
 
-  const fetchApiData = useSelector((e) => {
-    return e.data;
-  });
-
   const fetchData = async () => {
     const data = await axios(
       `https://academics.newtonschool.co/api/v1/bookingportals/flight/?search={"source":"${whereFromValue.From}","destination":"${whereFromValue.To}"}&day=Mon`,
       { headers: { projectID: "uq9yiuh911bz" } }
     );
-    myRedux(setValues(data));
+
+    const dataReturn = await axios(
+      `https://academics.newtonschool.co/api/v1/bookingportals/flight/?search={"source":"${whereFromValue.To}","destination":"${whereFromValue.From}"}&day=Mon`,
+      { headers: { projectID: "uq9yiuh911bz" } }
+    );
+    let dataArray = [];
+    dataArray.push(data);
+    dataArray.push(dataReturn);
+    myRedux(setValues(dataArray));
     navigate("/searchflight");
   };
 

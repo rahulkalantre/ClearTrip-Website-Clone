@@ -7,6 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "../Styles/SearchFlightsFliters.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setValues } from "../Store/Slice";
+import { setReturnValues } from "../Store/filterSlice";
 
 const SearchFlightsFilters = () => {
   const dispatch = useDispatch();
@@ -33,8 +34,9 @@ const SearchFlightsFilters = () => {
   }, [filters, departureTime]);
 
   useEffect(() => {
-    setStoreFetchedData(fetchApiData.flightData.data.data.flights);
-    dispatch(setValues(fetchApiData.flightData.data.data.flights));
+    setStoreFetchedData(fetchApiData.flightData[0].data.data.flights);
+    dispatch(setValues(fetchApiData.flightData[0].data.data.flights));
+    dispatch(setReturnValues(fetchApiData.flightData[1].data.data.flights));
   }, []);
 
   const isDepartureTimeInRange = (departureTime) => {

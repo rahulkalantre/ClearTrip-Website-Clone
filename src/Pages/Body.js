@@ -8,11 +8,11 @@ const Body = () => {
 
   return (
     <div>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<FlightsPage />}/>
         <Route path="/searchflight" element={<SearchFlightPage />} />
-      </Routes> */}
-      <LeftSideFlightItineray />
+        <Route path="/reviewItineray" element={<LeftSideFlightItineray />} />
+      </Routes>
     </div>
   );
 };
