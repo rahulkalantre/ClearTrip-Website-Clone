@@ -1,0 +1,681 @@
+.main-leftside-div {
+  display: flex;
+  flex-direction: column;
+}
+.flight-itinerary-data {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.review-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 7.5rem;
+}
+.review-login {
+  /* border: 1px solid black; */
+  margin-left: 5px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.review {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.hr-line {
+  color: lightgray;
+}
+.heading-itinerary {
+  width: 791px;
+  height: 95px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 7.5rem;
+}
+.no-heading {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.flight-itinerary-title {
+  display: flex;
+  gap: 10px;
+  margin-left: 7.5rem;
+}
+.flight-location {
+  display: flex;
+  align-items: center;
+}
+.flight-location-span {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.flight-review-details {
+  display: flex;
+  margin-left: 7.5rem;
+  align-items: end;
+}
+
+.flight-name-details {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.name-details {
+  font-size: 12px;
+  color: #1a1a1a;
+}
+.flight-time-port-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 10px;
+}
+.flight-port-details {
+  display: flex;
+  gap: 13px;
+  align-items: baseline;
+}
+.layover-details {
+  height: 38px;
+  width: 791px;
+  background-color: #ebebeb;
+  margin-left: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  border-radius: 4px;
+}
+.layover-location {
+  font-size: 12px;
+  font-weight: bold;
+}
+.layover-time {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(190, 107, 113);
+}
+.axisbank-card {
+  height: 150px;
+  width: 790px;
+  /* background-image: url(../Assests/Images/Axis.svg); */
+  background-size: 260px;
+  background-position: 109% 40%;
+  background-repeat: no-repeat;
+  border: 1px solid lightgray;
+  background-color: rgb(249, 230, 231);
+  margin-left: 7.5rem;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.axisbank-heading {
+  display: flex;
+  align-items: last baseline;
+  justify-content: space-between;
+  padding: 5px;
+}
+.axisbank-offer {
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.axisbank-btn {
+  width: 155px;
+  height: 38px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.axisbank-offer-col-one {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+.axisbank-offer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+/* Accordion */
+.aboveaccordion-title {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 50px;
+  width: 791px;
+  margin-left: 7.5rem;
+  background-color: #d6e8fc;
+  display: flex;
+}
+.flight-depature-details {
+  color: #36c;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid rgb(51, 102, 204);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  width: 218px;
+  gap: 5px;
+  margin-left: 36px;
+  margin-right: 28px;
+  padding: 12px;
+}
+.flight-arried-details {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  width: 218px;
+  gap: 5px;
+  padding: 12px;
+}
+.port-name {
+  display: flex;
+  gap: 2px;
+}
+.travelling-guidedata-card {
+  border: 1px solid lightgray;
+  padding: 0px 20px;
+  padding-top: 16px;
+  margin-left: 7.5rem;
+  width: 791px;
+}
+.travelling-guidedata {
+  height: 64px;
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.travelling-guidedata-col {
+  display: flex;
+  gap: 9px;
+  margin: 10px;
+}
+.travelling-guidedata-text {
+  font-size: 12px;
+  line-height: 18px;
+}
+.flight-review-accordion {
+  width: 791px;
+  margin-left: 7.5rem;
+  background-color: #fff !important;
+}
+.refund {
+  width: 791px;
+  height: 104px;
+  margin-bottom: 32px;
+  margin-left: 7.5rem;
+}
+.refund-inner {
+  height: 80px;
+  background: linear-gradient(111.67deg, #fff1ed, #fff 53.4%);
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border: 1px solid rgba(255, 184, 165, 0.35);
+  border-bottom: none;
+  padding: 16px;
+}
+.refund-inner-first {
+  display: flex;
+  justify-content: space-between;
+}
+.free {
+  color: #11a670;
+  font-size: 16px;
+  font-weight: 600;
+}
+.price {
+  color: grey;
+  line-height: 22px;
+  font-size: 16px;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+.claimed-text {
+  height: 24px;
+  background: linear-gradient(
+    90.01deg,
+    #fbe6e0 0.01%,
+    rgba(255, 241, 237, 0) 41.83%
+  );
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border: 1px solid rgba(255, 184, 165, 0.35);
+  border-top: none;
+}
+.claimed-text-span {
+  color: #992f0e;
+  padding: 4px;
+  margin-left: 16px;
+  font-size: 14px;
+}
+.continue {
+  margin-left: 7.5rem;
+  margin-bottom: 30px;
+}
+.continue-btn {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0px 28px;
+  height: 40px;
+  cursor: pointer;
+  background-color: #f77728;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  width: 140px;
+}
+.number-btn {
+  min-width: 80px;
+  line-height: 20px;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-number {
+  width: 346px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 8px;
+  height: 36px;
+  color: #1a1a1a;
+  border-color: #e6e6e6;
+  border-radius: 4px;
+  border-width: 1px;
+}
+.additional-info-form {
+  margin-left: 7.5rem;
+  font-size: 14px;
+}
+.mobile-card {
+  margin-top: 15px;
+  width: 791px;
+  display: flex;
+  gap: 20px;
+}
+.email {
+  width: 447px;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 8px;
+  height: 36px;
+  color: #1a1a1a;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #e6e6e6;
+  border-width: 1px;
+}
+.email-card {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.continue-second {
+  margin-top: 30px;
+  margin-left: 7.5rem;
+  margin-bottom: 30px;
+}
+
+/* RightSide */
+.aside {
+  margin-top: 24px;
+  width: 300px;
+  height: 700px;
+  overflow-y: scroll !important;
+}
+
+.main-rightside-div {
+  background: rgb(255, 255, 255);
+  z-index: 79;
+  position: sticky;
+  top: 0px;
+  width: 266px;
+  height: 304px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+}
+
+.billing-data {
+  display: flex;
+  flex-direction: column;
+  width: 261px;
+  height: 80px;
+  padding: 0px 16px;
+  margin-top: 16px;
+}
+
+.avaliable-seat {
+  margin-top: 6px;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ff3c2b;
+}
+.bill-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.number-of-person {
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #666;
+  font-weight: 400;
+}
+
+.other-expense {
+  overflow: hidden;
+  opacity: 1;
+  height: auto;
+}
+.line {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  border-color: #e6e6e6;
+}
+.otherexpense-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+}
+
+.otherexpense-details {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #666;
+}
+
+.otherexpense-price {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.emi {
+  width: 265px;
+  height: 80px;
+  background-color: rgb(255, 241, 236);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+}
+
+.emi-details {
+  margin-left: 8px;
+  width: 218px;
+  height: 56px;
+}
+
+.emi-offer {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  display: flex;
+}
+
+.monthlty-price {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.all-plans {
+  color: rgb(15, 107, 255);
+  margin-top: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.credit-card-data {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: grey;
+}
+
+.main-offer-div {
+  margin-top: 20px;
+  width: 266px;
+  height: 849px;
+  padding-bottom: 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+}
+
+.offer-title-div {
+  width: 234px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  margin: 16px;
+}
+
+.offer-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+.coupon-card {
+  width: 224px;
+  height: 52px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 16px;
+  margin-left: 16px;
+  align-items: center;
+  background-color: #fff;
+}
+.coupon-card-input {
+  width: 159px;
+  height: 36px;
+  border: none !important;
+  padding-left: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 8px;
+  color: #1a1a1a;
+  outline: none;
+}
+.coupon-apply {
+  width: 38px;
+  height: 36px;
+  border: none;
+  background: #fff;
+  color: grey;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 0 8px 0 0;
+  cursor: pointer;
+}
+.coupon-details-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 16px;
+  margin-top: 16px;
+}
+.coupon-details-card {
+  width: 234px;
+  height: 32px;
+  margin-bottom: 16px;
+  display: flex;
+}
+.coupon-button-active {
+  border: 1.5px solid #000;
+  border-radius: 16px;
+  background-color: #f3f3f3;
+  color: #1a1a1a;
+  padding: 5px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.coupon-button {
+  padding: 5px 9px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  margin-left: 8px;
+}
+.banks-offers-card {
+  display: flex;
+  flex-direction: column;
+  width: 234px;
+  height: 663px;
+}
+.banks-offers-list {
+  list-style-type: none;
+  width: 100%;
+}
+.offer-div {
+  width: 234px;
+  height: 41px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ticket {
+  display: flex;
+  gap: 6px;
+  width: 86px;
+  height: 25;
+  padding: 8px;
+  background: #ecf3ff;
+  border-radius: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  width: fit-content;
+  position: relative;
+}
+.coupons-div {
+  display: flex;
+  align-items: center;
+}
+.coupons {
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.semi-circle-top {
+  position: absolute;
+  background: #fff;
+  height: 4px;
+  width: 8px;
+  border-radius: 0 0 6px 6px;
+  top: 0;
+  left: 36px;
+}
+.semi-circle-bottom {
+  position: absolute;
+  background: #fff;
+  height: 4px;
+  width: 8px;
+  border-radius: 6px 6px 0 0;
+  bottom: 0;
+  left: 36px;
+}
+.coupons-apply-btn {
+  border: none;
+  background: #fff;
+  color: #0f6bff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+.coupons-off-percentage {
+  color: #11a670;
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 12px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.coupons-moredata {
+  color: grey;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  padding: 0;
+  margin-top: 8px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+.know-more {
+  cursor: pointer;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.dotted-line {
+  border-width: 0.5px;
+  margin: 24px 0px;
+  border-color: #e6e6e6;
+  border-style: dashed;
+}
+.view-alloffer {
+  color: #0f6bff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 20px;
+  float: right;
+  cursor: pointer;
+}

@@ -10,8 +10,8 @@ const MiddleSection = () => {
     <div>
       <div className="middle-section">
         <div>
-          <h1>Search Flights Here</h1>
-          <h2>Enjoy hassle free bookings with Cleartrip</h2>
+          <p className="card-heading">Search Flights</p>
+          <p className="card-sub-title">Enjoy hassle free bookings with Cleartrip</p>
         </div>
         <SearchFlightCard icon={<FontAwesomeIcon icon={faArrowRight} />} />
         <div>

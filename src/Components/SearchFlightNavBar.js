@@ -35,7 +35,6 @@ const SearchFlightNavBar = () => {
         <div className="flights-search-box">BOM - Mumbai, IN</div>
 
         <div className="flights-search-box">Thu, Nov 16</div>
-        <div className="flights-search-box">Thu, Nov 18</div>
         <div className="flights-search-box">1 Traveller</div>
         <button className="flights-search-button">Search</button>
       </div>

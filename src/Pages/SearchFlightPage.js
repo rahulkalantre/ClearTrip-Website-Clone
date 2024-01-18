@@ -1,7 +1,7 @@
 import React from "react";
 import SearchFlightNavBar from "../Components/SearchFlightNavBar";
 import SearchFlightFilters from "../Components/SearchFlightFliters";
-import FlightAllDetails from "../Components/FlightAllDetails";
+import SearchFlightData from "../Atoms/SearchFlightData";
 
 const SearchFlightPage = () => {
   return (
@@ -9,7 +9,7 @@ const SearchFlightPage = () => {
       <SearchFlightNavBar />
       <div style={{ display: "flex", marginTop: "20px" }}>
         <SearchFlightFilters />
-        <FlightAllDetails />
+        <SearchFlightData />
       </div>
     </div>
   );
