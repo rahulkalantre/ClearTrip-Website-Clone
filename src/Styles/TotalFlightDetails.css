@@ -28,6 +28,12 @@
   cursor: pointer;
 }
 
+.selected-left, 
+.selected-right {
+  background-color: #eff5fc;
+  border: 1px solid #36c;
+}
+
 .final-flight-book-data {
   border: 1.5px solid lightgray;
   border-radius: 5px;

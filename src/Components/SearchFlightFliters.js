@@ -24,6 +24,13 @@ const SearchFlightsFilters = () => {
     evening: false,
     night: false,
   });
+  // const [arrivalTime, setArrivalTime] = useState({
+  //   earlyMorning: false,
+  //   morning: false,
+  //   afternoon: false,
+  //   evening: false,
+  //   night: false,
+  // });
 
   const fetchApiData = useSelector((e) => {
     return e.data;
@@ -46,6 +53,8 @@ const SearchFlightsFilters = () => {
 
     return departureDate.getHours();
   };
+
+
 
   const filterFlights = () => {
     const filteredFlights = storeFetchedData.filter((flight) => {
@@ -99,10 +108,10 @@ const SearchFlightsFilters = () => {
     }));
   };
 
-  const departureTimeChange = (timeSlot) => {
+  const departureTimeChange = (departureTimeSlot) => {
     setDepartureTime((prevFilters) => ({
       ...prevFilters,
-      [timeSlot]: !prevFilters[timeSlot],
+      [departureTimeSlot]: !prevFilters[departureTimeSlot],
     }));
   };
 
