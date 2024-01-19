@@ -18,7 +18,7 @@ import PaidMeal from "../Assets/FlightReviewPage/PaidMeal";
 import PaidSeat from "../Assets/FlightReviewPage/PaidSeat";
 import Rupees from "../Assets/FlightReviewPage/Rupees";
 import Seat from "../Assets/FlightReviewPage/Seat";
-import "../Styles/MainFlightReviewItineray.css";
+import "../Styles/FlightReviewItineraryPage.css";
 
 const LeftSideFlightItineray = () => {
   return (
@@ -92,6 +92,14 @@ const LeftSideFlightItineray = () => {
               <span className="layover-time">Short layover 1h 15m</span>
             </div>
             {/* flight details 2 */}
+            <div className="flight-itinerary-title">
+              <div className="flight-location">
+                <span className="flight-location-span">Mumbai</span>
+                <ArrowItinerary />
+                <span className="flight-location-span">Bangalore</span>
+              </div>
+              <div>Fri,26 Nov 2023</div>
+            </div>
             <div className="flight-review-details">
               <div className="flight-name-details">
                 <div>
@@ -135,7 +143,7 @@ const LeftSideFlightItineray = () => {
             </div>
             {/* flight details 3*/}
 
-            <div className="flight-review-details">
+            {/* <div className="flight-review-details">
               <div className="flight-name-details">
                 <div>
                   <Flight6E />
@@ -175,7 +183,7 @@ const LeftSideFlightItineray = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Axis bank card */}
             <div className="axisbank-card">
