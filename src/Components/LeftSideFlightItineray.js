@@ -19,8 +19,13 @@ import PaidSeat from "../Assets/FlightReviewPage/PaidSeat";
 import Rupees from "../Assets/FlightReviewPage/Rupees";
 import Seat from "../Assets/FlightReviewPage/Seat";
 import "../Styles/FlightReviewItineraryPage.css";
+import { useSelector } from "react-redux";
 
 const LeftSideFlightItineray = () => {
+  const bookNow = useSelector((e) => {
+    return e.bookingData;
+  })
+  // console.log(bookNow?.bookNowReceivedData[0]);
   return (
     <>
       <div className="main-leftside-div">
@@ -35,7 +40,7 @@ const LeftSideFlightItineray = () => {
             {/* title */}
             <div className="flight-itinerary-title">
               <div className="flight-location">
-                <span className="flight-location-span">Bangalore</span>
+                <span className="flight-location-span">{bookNow?.bookNowReceivedData[0].source}</span>
                 <ArrowItinerary />
                 <span className="flight-location-span">Mumbai</span>
               </div>

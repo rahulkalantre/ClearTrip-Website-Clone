@@ -20,7 +20,7 @@ const FlightReviewItineraryPage = () => {
       <hr className="hr-line"></hr>
       <div style={{ display: "flex", gap: "34px" }}>
         <LeftSideFlightItineary />
-        <RightSideFlightItineary />
+        {/* <RightSideFlightItineary /> */}
       </div>
     </div>
   );
